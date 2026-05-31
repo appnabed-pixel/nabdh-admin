@@ -60,3 +60,25 @@ export const mockActivityData = [
   { day: 'الجمعة', reports: 38, posts: 19, users: 180 },
   { day: 'السبت', reports: 62, posts: 37, users: 298 },
 ];
+
+export const mockQuestions = [
+  { id: 'q1', title: 'أفضل طبيب أعصاب في سطيف؟', author: 'أحمد بن علي', category: 'health', answers: 4, views: 142, status: 'answered', createdAt: new Date(Date.now() - 3 * 3600000).toISOString() },
+  { id: 'q2', title: 'وين نلقى عسل نقي وموثوق؟', author: 'سارة بوعلام', category: 'food', answers: 6, views: 89, status: 'answered', createdAt: new Date(Date.now() - 8 * 3600000).toISOString() },
+  { id: 'q3', title: 'سبّاك موثوق في سطيف؟', author: 'يوسف قاسمي', category: 'services', answers: 8, views: 234, status: 'answered', createdAt: new Date(Date.now() - 24 * 3600000).toISOString() },
+  { id: 'q4', title: 'إعلان تجاري مشبوه؟؟', author: 'مستخدم مريب', category: 'general', answers: 0, views: 5, status: 'flagged', createdAt: new Date(Date.now() - 1 * 3600000).toISOString() },
+  { id: 'q5', title: 'صيدلية مفتوحة الآن في وسط سطيف؟', author: 'خالد منصور', category: 'health', answers: 2, views: 28, status: 'open', createdAt: new Date(Date.now() - 45 * 60000).toISOString() },
+];
+
+export const mockRecommendations = [
+  { id: 'r1', type: 'doctor', name: 'د. بلقاسم — أعصاب', author: 'فاطمة زهراء', rating: 4.8, count: 34, status: 'approved', createdAt: new Date(Date.now() - 5 * 3600000).toISOString() },
+  { id: 'r2', type: 'business', name: 'الحاج مسعود — عسل', author: 'محمد أمين', rating: 4.9, count: 52, status: 'approved', createdAt: new Date(Date.now() - 10 * 3600000).toISOString() },
+  { id: 'r3', type: 'doctor', name: 'د. سهيلة — أسنان', author: 'ريم حمادي', rating: 4.7, count: 41, status: 'pending', createdAt: new Date(Date.now() - 2 * 3600000).toISOString() },
+  { id: 'r4', type: 'business', name: 'محل مريب — ادخلوا موقعنا!', author: 'مستخدم مريب', rating: 5.0, count: 1, status: 'flagged', createdAt: new Date(Date.now() - 30 * 60000).toISOString() },
+];
+
+export const mockReports = [
+  { id: 'rp1', type: 'question', content: 'إعلان تجاري مشبوه', reportedBy: 'فاطمة زهراء', reason: 'spam', status: 'pending', createdAt: new Date(Date.now() - 1 * 3600000).toISOString() },
+  { id: 'rp2', type: 'answer', content: 'معلومات كاذبة عن طبيب', reportedBy: 'كريم لعرج', reason: 'misinformation', status: 'pending', createdAt: new Date(Date.now() - 3 * 3600000).toISOString() },
+  { id: 'rp3', type: 'recommendation', content: 'محتوى مسيء', reportedBy: 'نادية عمراني', reason: 'offensive', status: 'resolved', createdAt: new Date(Date.now() - 6 * 3600000).toISOString() },
+  { id: 'rp4', type: 'user', content: 'مستخدم مريب — ينشر إعلانات', reportedBy: 'أحمد بن علي', reason: 'spam', status: 'pending', createdAt: new Date(Date.now() - 30 * 60000).toISOString() },
+];
