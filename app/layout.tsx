@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} h-full`}>
-      <body className={`${cairo.className} min-h-full bg-gray-50`}>{children}</body>
+      <body className={`${cairo.className} min-h-full`} style={{ background: '#F8FAFC' }}>{children}</body>
     </html>
   );
 }

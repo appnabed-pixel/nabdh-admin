@@ -2,15 +2,35 @@
 
 :root {
   --font-cairo: 'Cairo', sans-serif;
+  --primary: #14B8A6;
+  --primary-hover: #0F9690;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --bg: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E8EDF2;
+  --text-1: #0F172A;
+  --text-2: #475569;
+  --text-3: #94A3B8;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-cairo), sans-serif;
   -webkit-font-smoothing: antialiased;
+  background: var(--bg);
+  color: var(--text-1);
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+input, textarea, select {
+  font-family: var(--font-cairo), sans-serif;
 }
