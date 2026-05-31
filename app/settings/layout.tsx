@@ -8,7 +8,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <style>{`
         .admin-layout {
           display: flex !important;
-          flex-direction: row-reverse !important;
+          flex-direction: row !important;
           height: 100vh;
           overflow: hidden;
           background: #F8FAFC;
@@ -17,6 +17,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           flex: 1;
           overflow-y: auto;
           min-width: 0;
+          order: -1;
         }
       `}</style>
     </div>
