@@ -2,9 +2,9 @@ import Sidebar from '@/components/layout/Sidebar';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: '#F8FAFC' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', height: '100vh', overflow: 'hidden', background: '#F8FAFC', direction: 'ltr' }}>
+      <main style={{ flex: 1, overflowY: 'auto', minWidth: 0, direction: 'rtl' }}>{children}</main>
       <Sidebar />
-      <main className="flex-1 overflow-y-auto min-w-0">{children}</main>
     </div>
   );
 }
