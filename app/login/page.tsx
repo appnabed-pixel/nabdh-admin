@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Mail, Lock, Eye, EyeOff, Zap, ArrowLeft, AlertCircle } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, Zap, ArrowLeft, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -37,179 +37,256 @@ export default function LoginPage() {
     <div className="min-h-screen flex" style={{ background: '#F8FAFC', fontFamily: 'Cairo, sans-serif' }} dir="rtl">
 
       {/* Right — Brand Panel */}
-      <div className="hidden lg:flex flex-col justify-between w-[45%] p-12 relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #0F172A 0%, #134E4A 60%, #14B8A6 100%)' }}>
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+      <div
+        className="hidden lg:flex flex-col w-[46%] p-14 relative overflow-hidden"
+        style={{ background: 'linear-gradient(150deg, #0C1A2E 0%, #0D3D38 55%, #0E7065 100%)' }}
+      >
+        {/* Grid texture */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }} />
+        {/* Glow */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{
+          background: 'radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 70%)',
+          transform: 'translate(-30%, 30%)',
+        }} />
 
-        {/* Top */}
-        <div className="relative">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)' }}>
-              <Zap size={18} className="text-white" strokeWidth={2.5} />
-            </div>
-            <div>
-              <p className="text-white font-bold text-lg leading-none">نبض</p>
-              <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>Nabd • سطيف</p>
-            </div>
+        {/* Logo */}
+        <div className="relative flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
+            <Zap size={18} className="text-white" strokeWidth={2.5} />
+          </div>
+          <div>
+            <p className="text-white font-bold text-base leading-none">نبض</p>
+            <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>Nabd Admin</p>
           </div>
         </div>
 
-        {/* Center */}
-        <div className="relative space-y-6">
-          <div className="space-y-3">
-            <h1 className="text-4xl font-bold text-white leading-tight">
-              لوحة تحكم<br />
-              <span style={{ color: '#5EEAD4' }}>نبض</span>
+        {/* Main copy */}
+        <div className="relative flex-1 flex flex-col justify-center" style={{ paddingTop: 48, paddingBottom: 32 }}>
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: '#5EEAD4' }}>
+              لوحة تحكم سطيف
+            </p>
+            <h1 className="font-bold leading-tight" style={{ color: '#fff', fontSize: 36 }}>
+              أدر مجتمعك<br />
+              <span style={{ color: '#5EEAD4' }}>بكل سهولة</span>
             </h1>
-            <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', maxWidth: 340 }}>
+            <p className="mt-5 leading-relaxed text-sm" style={{ color: 'rgba(255,255,255,0.55)', maxWidth: 320 }}>
               أدر مجتمع سطيف، التوصيات، تقارير الازدحام ونشاط المدينة — كل شيء من مكان واحد.
             </p>
           </div>
 
-          {/* Feature pills */}
-          <div className="flex flex-wrap gap-2">
-            {['إدارة الأماكن', 'تقارير الازدحام', 'الأسئلة والإجابات', 'إشعارات فورية'].map(f => (
-              <span key={f} className="text-xs px-3 py-1.5 rounded-full font-medium" style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                {f}
-              </span>
+          {/* Features */}
+          <div className="space-y-3">
+            {[
+              'إدارة الأماكن والخريطة الحية',
+              'مراجعة الأسئلة والتوصيات',
+              'تقارير الازدحام في الوقت الفعلي',
+              'إشعارات فورية لجميع المستخدمين',
+            ].map(f => (
+              <div key={f} className="flex items-center gap-3">
+                <CheckCircle2 size={15} style={{ color: '#5EEAD4', flexShrink: 0 }} strokeWidth={2} />
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>{f}</span>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Footer */}
         <div className="relative">
-          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>
-            © 2025 نبض — سطيف، الجزائر
-          </p>
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>© 2025 نبض — سطيف، الجزائر</p>
         </div>
       </div>
 
       {/* Left — Login Form */}
-      <div className="flex-1 flex items-center justify-center p-6 lg:p-12">
-        <div className="w-full" style={{ maxWidth: 400 }}>
+      <div className="flex-1 flex items-center justify-center p-6 lg:p-16">
+        <div style={{ width: '100%', maxWidth: 450 }}>
 
-          {/* Mobile logo */}
-          <div className="flex items-center gap-2 mb-8 lg:hidden">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #14B8A6, #0EA5E9)' }}>
-              <Zap size={15} className="text-white" strokeWidth={2.5} />
+          {/* Logo (mobile + desktop above form) */}
+          <div className="flex items-center justify-center gap-2.5 mb-10">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #14B8A6, #0EA5E9)' }}>
+              <Zap size={17} className="text-white" strokeWidth={2.5} />
             </div>
-            <span className="font-bold text-sm" style={{ color: '#0F172A' }}>نبض — لوحة التحكم</span>
+            <span className="font-bold" style={{ color: '#0F172A', fontSize: 18 }}>نبض</span>
           </div>
 
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold" style={{ color: '#0F172A' }}>مرحباً</h2>
-            <p className="text-sm mt-1" style={{ color: '#64748B' }}>سجّل دخولك للمتابعة</p>
+          {/* Heading */}
+          <div className="text-center mb-8">
+            <h2 className="font-bold" style={{ color: '#0F172A', fontSize: 26 }}>تسجيل الدخول</h2>
+            <p className="mt-2 text-sm" style={{ color: '#64748B' }}>
+              أدخل بياناتك للوصول إلى لوحة التحكم
+            </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Card */}
+          <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #E8EDF2', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+            <form onSubmit={handleSubmit} className="space-y-5">
 
-            {/* Email */}
-            <div>
-              <label className="block text-xs font-semibold mb-1.5" style={{ color: '#374151' }}>
-                البريد الإلكتروني
-              </label>
-              <div className="relative">
-                <Mail size={15} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#94A3B8' }} />
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  required
-                  placeholder="admin@nabdh.app"
-                  className="w-full text-sm rounded-xl pr-9 pl-4 py-2.5 outline-none transition-all"
-                  style={{
-                    background: '#fff',
-                    border: `1px solid ${error ? '#FCA5A5' : '#E2E8F0'}`,
-                    color: '#0F172A',
-                    fontFamily: 'Cairo, sans-serif',
-                  }}
-                  onFocus={e => { e.target.style.borderColor = '#14B8A6'; e.target.style.boxShadow = '0 0 0 3px rgba(20,184,166,0.1)'; }}
-                  onBlur={e => { e.target.style.borderColor = error ? '#FCA5A5' : '#E2E8F0'; e.target.style.boxShadow = 'none'; }}
-                />
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#374151' }}>
+                  البريد الإلكتروني
+                </label>
+                <div className="relative">
+                  <Mail size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#94A3B8' }} />
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    placeholder="admin@nabdh.app"
+                    style={{
+                      width: '100%',
+                      height: 52,
+                      background: '#F8FAFC',
+                      border: `1.5px solid ${error ? '#FCA5A5' : '#E2E8F0'}`,
+                      borderRadius: 12,
+                      paddingRight: 44,
+                      paddingLeft: 16,
+                      fontSize: 14,
+                      color: '#0F172A',
+                      fontFamily: 'Cairo, sans-serif',
+                      outline: 'none',
+                      transition: 'border-color 0.15s, box-shadow 0.15s',
+                    }}
+                    onFocus={e => {
+                      e.target.style.borderColor = '#14B8A6';
+                      e.target.style.boxShadow = '0 0 0 4px rgba(20,184,166,0.1)';
+                      e.target.style.background = '#fff';
+                    }}
+                    onBlur={e => {
+                      e.target.style.borderColor = error ? '#FCA5A5' : '#E2E8F0';
+                      e.target.style.boxShadow = 'none';
+                      e.target.style.background = '#F8FAFC';
+                    }}
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Password */}
-            <div>
-              <label className="block text-xs font-semibold mb-1.5" style={{ color: '#374151' }}>
-                كلمة المرور
-              </label>
-              <div className="relative">
-                <Lock size={15} className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#94A3B8' }} />
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  required
-                  placeholder="••••••••"
-                  className="w-full text-sm rounded-xl pr-9 pl-10 py-2.5 outline-none transition-all"
-                  style={{
-                    background: '#fff',
-                    border: `1px solid ${error ? '#FCA5A5' : '#E2E8F0'}`,
-                    color: '#0F172A',
-                    fontFamily: 'Cairo, sans-serif',
-                  }}
-                  onFocus={e => { e.target.style.borderColor = '#14B8A6'; e.target.style.boxShadow = '0 0 0 3px rgba(20,184,166,0.1)'; }}
-                  onBlur={e => { e.target.style.borderColor = error ? '#FCA5A5' : '#E2E8F0'; e.target.style.boxShadow = 'none'; }}
-                />
-                <button type="button" onClick={() => setShowPassword(v => !v)} className="absolute left-3 top-1/2 -translate-y-1/2 p-0.5 rounded transition-colors" style={{ color: '#94A3B8' }}>
-                  {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
-                </button>
+              {/* Password */}
+              <div>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#374151' }}>
+                  كلمة المرور
+                </label>
+                <div className="relative">
+                  <Lock size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#94A3B8' }} />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    required
+                    placeholder="••••••••"
+                    style={{
+                      width: '100%',
+                      height: 52,
+                      background: '#F8FAFC',
+                      border: `1.5px solid ${error ? '#FCA5A5' : '#E2E8F0'}`,
+                      borderRadius: 12,
+                      paddingRight: 44,
+                      paddingLeft: 48,
+                      fontSize: 15,
+                      color: '#0F172A',
+                      fontFamily: 'Cairo, sans-serif',
+                      outline: 'none',
+                      transition: 'border-color 0.15s, box-shadow 0.15s',
+                    }}
+                    onFocus={e => {
+                      e.target.style.borderColor = '#14B8A6';
+                      e.target.style.boxShadow = '0 0 0 4px rgba(20,184,166,0.1)';
+                      e.target.style.background = '#fff';
+                    }}
+                    onBlur={e => {
+                      e.target.style.borderColor = error ? '#FCA5A5' : '#E2E8F0';
+                      e.target.style.boxShadow = 'none';
+                      e.target.style.background = '#F8FAFC';
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(v => !v)}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-0.5 rounded transition-colors"
+                    style={{ color: '#94A3B8' }}
+                  >
+                    {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* Remember */}
-            <div className="flex items-center gap-2">
-              <input
-                id="remember"
-                type="checkbox"
-                checked={remember}
-                onChange={e => setRemember(e.target.checked)}
-                className="rounded"
-                style={{ accentColor: '#14B8A6', width: 15, height: 15 }}
-              />
-              <label htmlFor="remember" className="text-xs select-none cursor-pointer" style={{ color: '#64748B' }}>
-                تذكرني
-              </label>
-            </div>
-
-            {/* Error */}
-            {error && (
-              <div className="flex items-center gap-2 px-3 py-2.5 rounded-xl" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-                <AlertCircle size={14} style={{ color: '#EF4444', flexShrink: 0 }} />
-                <p className="text-xs font-medium" style={{ color: '#DC2626' }}>{error}</p>
+              {/* Remember */}
+              <div className="flex items-center gap-3 pt-1">
+                <div
+                  onClick={() => setRemember(v => !v)}
+                  className="relative cursor-pointer flex-shrink-0"
+                  style={{ width: 20, height: 20 }}
+                >
+                  <div style={{
+                    width: 20,
+                    height: 20,
+                    borderRadius: 5,
+                    border: `2px solid ${remember ? '#14B8A6' : '#CBD5E1'}`,
+                    background: remember ? '#14B8A6' : '#fff',
+                    transition: 'all 0.15s',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    {remember && <svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                  </div>
+                </div>
+                <label
+                  onClick={() => setRemember(v => !v)}
+                  className="text-sm cursor-pointer select-none"
+                  style={{ color: '#475569' }}
+                >
+                  تذكرني لمدة 30 يوماً
+                </label>
               </div>
-            )}
 
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold text-white transition-all"
-              style={{
-                background: loading ? '#94A3B8' : 'linear-gradient(135deg, #14B8A6, #0EA5E9)',
-                boxShadow: loading ? 'none' : '0 4px 14px rgba(20,184,166,0.35)',
-                cursor: loading ? 'not-allowed' : 'pointer',
-              }}
-            >
-              {loading ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  جاري التحقق...
-                </>
-              ) : (
-                <>
-                  دخول
-                  <ArrowLeft size={15} />
-                </>
+              {/* Error */}
+              {error && (
+                <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
+                  <AlertCircle size={16} style={{ color: '#EF4444', flexShrink: 0 }} />
+                  <p className="text-sm font-medium" style={{ color: '#DC2626' }}>{error}</p>
+                </div>
               )}
-            </button>
 
-          </form>
+              {/* Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 font-bold text-white rounded-xl transition-all"
+                style={{
+                  height: 52,
+                  fontSize: 15,
+                  background: loading ? '#94A3B8' : 'linear-gradient(135deg, #14B8A6 0%, #0EA5E9 100%)',
+                  boxShadow: loading ? 'none' : '0 4px 18px rgba(20,184,166,0.4)',
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  border: 'none',
+                  marginTop: 4,
+                }}
+              >
+                {loading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    جاري التحقق...
+                  </>
+                ) : (
+                  <>
+                    دخول إلى لوحة التحكم
+                    <ArrowLeft size={16} />
+                  </>
+                )}
+              </button>
+
+            </form>
+          </div>
 
           <p className="text-center text-xs mt-6" style={{ color: '#94A3B8' }}>
             هذه اللوحة مخصصة للمشرفين المعتمدين فقط
           </p>
+
         </div>
       </div>
 
